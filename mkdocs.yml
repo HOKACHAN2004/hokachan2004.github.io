@@ -36,6 +36,7 @@ nav:
   - EE专业课程: 
     - 微电子工艺: micro-process/process.md
     - 操作系统: os/os.md
+    - 计算机网络: network/network.md
 
 
 markdown_extensions:
