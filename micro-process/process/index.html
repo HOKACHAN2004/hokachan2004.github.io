@@ -1,0 +1,2110 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="He Jiazhen(何家镇)">
+      
+      
+        <link rel="canonical" href="https://hokachan2004.github.io/eepages/micro-process/process/">
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../../os/os/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>微电子工艺 - Jiazhen's Personal Pages</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="grey">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#silicon-preparation" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Jiazhen&#39;s Personal Pages" class="md-header__button md-logo" aria-label="Jiazhen's Personal Pages" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jiazhen's Personal Pages
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              微电子工艺
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="grey"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  主页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  EE专业课程
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Jiazhen&#39;s Personal Pages" class="md-nav__button md-logo" aria-label="Jiazhen's Personal Pages" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Jiazhen's Personal Pages
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    主页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    EE专业课程
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            EE专业课程
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    微电子工艺
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    微电子工艺
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#silicon-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Silicon Preparation 晶圆制备
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Silicon Preparation 晶圆制备">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      单晶硅的制备
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epitaxy-and-thin-film-deposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Epitaxy and Thin Film Deposition 外延和薄膜生长
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Epitaxy and Thin Film Deposition 外延和薄膜生长">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cvd-chemical-vapour-deposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      CVD Chemical Vapour Deposition 化学气相沉积
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      化学气相沉积的几种类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ald-atomic-layer-deposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      ALD Atomic Layer Deposition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      外延沉积的一般要求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iii-v" class="md-nav__link">
+    <span class="md-ellipsis">
+      III-V族元素的沉积技术
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="III-V族元素的沉积技术">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mbe-molecular-beam-epitaxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      MBE molecular beam epitaxy 分子束外延
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#movpe-metal-organic-vapour-phase-epitaxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      MOVPE metal organic vapour phase epitaxy 金属有机气相沉积
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pvd" class="md-nav__link">
+    <span class="md-ellipsis">
+      PVD
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oxidation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Oxidation 氧化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Oxidation 氧化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#thermal-oxidation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thermal Oxidation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#locos" class="md-nav__link">
+    <span class="md-ellipsis">
+      LOCOS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#soi" class="md-nav__link">
+    <span class="md-ellipsis">
+      SOI
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#photolithography" class="md-nav__link">
+    <span class="md-ellipsis">
+      Photolithography 光刻技术
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Photolithography 光刻技术">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      光刻的两个参数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      先进光刻技术
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="先进光刻技术">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      多重曝光技术
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      浸没式光刻
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opc" class="md-nav__link">
+    <span class="md-ellipsis">
+      OPC 光学邻近修正
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-shift-masking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase Shift Masking
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      下一代光刻技术
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etching-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Etching Process 刻蚀工艺
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Etching Process 刻蚀工艺">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#photoresist-removal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Photoresist Removal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#digital-etching" class="md-nav__link">
+    <span class="md-ellipsis">
+      digital etching
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cmp" class="md-nav__link">
+    <span class="md-ellipsis">
+      CMP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      互联工艺
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="互联工艺">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      大马士革工艺
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#low-k" class="md-nav__link">
+    <span class="md-ellipsis">
+      互联工艺的low-k材料
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#doping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Doping 掺杂
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Doping 掺杂">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diffusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diffusion 扩散
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ion-implantation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ion Implantation 离子注入
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cmos" class="md-nav__link">
+    <span class="md-ellipsis">
+      CMOS工艺集成
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finfet" class="md-nav__link">
+    <span class="md-ellipsis">
+      FinFET
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FinFET">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      短沟道效应
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finfet_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      FinFET的优点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finfet_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      FinFET的制作工艺
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hkmg" class="md-nav__link">
+    <span class="md-ellipsis">
+      HKMG
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metal-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metal Gate
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strain-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strain Engineering
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mos" class="md-nav__link">
+    <span class="md-ellipsis">
+      MOS管结构创新
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mos_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      MOS管材料创新
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../os/os/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    操作系统
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    计算机网络
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#silicon-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Silicon Preparation 晶圆制备
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Silicon Preparation 晶圆制备">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      单晶硅的制备
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epitaxy-and-thin-film-deposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Epitaxy and Thin Film Deposition 外延和薄膜生长
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Epitaxy and Thin Film Deposition 外延和薄膜生长">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cvd-chemical-vapour-deposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      CVD Chemical Vapour Deposition 化学气相沉积
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      化学气相沉积的几种类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ald-atomic-layer-deposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      ALD Atomic Layer Deposition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      外延沉积的一般要求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iii-v" class="md-nav__link">
+    <span class="md-ellipsis">
+      III-V族元素的沉积技术
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="III-V族元素的沉积技术">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mbe-molecular-beam-epitaxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      MBE molecular beam epitaxy 分子束外延
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#movpe-metal-organic-vapour-phase-epitaxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      MOVPE metal organic vapour phase epitaxy 金属有机气相沉积
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pvd" class="md-nav__link">
+    <span class="md-ellipsis">
+      PVD
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oxidation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Oxidation 氧化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Oxidation 氧化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#thermal-oxidation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thermal Oxidation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#locos" class="md-nav__link">
+    <span class="md-ellipsis">
+      LOCOS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#soi" class="md-nav__link">
+    <span class="md-ellipsis">
+      SOI
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#photolithography" class="md-nav__link">
+    <span class="md-ellipsis">
+      Photolithography 光刻技术
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Photolithography 光刻技术">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      光刻的两个参数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      先进光刻技术
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="先进光刻技术">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      多重曝光技术
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      浸没式光刻
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opc" class="md-nav__link">
+    <span class="md-ellipsis">
+      OPC 光学邻近修正
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-shift-masking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase Shift Masking
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      下一代光刻技术
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etching-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Etching Process 刻蚀工艺
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Etching Process 刻蚀工艺">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#photoresist-removal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Photoresist Removal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#digital-etching" class="md-nav__link">
+    <span class="md-ellipsis">
+      digital etching
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cmp" class="md-nav__link">
+    <span class="md-ellipsis">
+      CMP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      互联工艺
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="互联工艺">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      大马士革工艺
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#low-k" class="md-nav__link">
+    <span class="md-ellipsis">
+      互联工艺的low-k材料
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#doping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Doping 掺杂
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Doping 掺杂">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diffusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diffusion 扩散
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ion-implantation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ion Implantation 离子注入
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cmos" class="md-nav__link">
+    <span class="md-ellipsis">
+      CMOS工艺集成
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finfet" class="md-nav__link">
+    <span class="md-ellipsis">
+      FinFET
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FinFET">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      短沟道效应
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finfet_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      FinFET的优点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finfet_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      FinFET的制作工艺
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hkmg" class="md-nav__link">
+    <span class="md-ellipsis">
+      HKMG
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metal-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metal Gate
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strain-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strain Engineering
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mos" class="md-nav__link">
+    <span class="md-ellipsis">
+      MOS管结构创新
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mos_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      MOS管材料创新
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>微电子工艺</h1>
+
+<h2 id="silicon-preparation">Silicon Preparation 晶圆制备</h2>
+<p>why Silicon？适合制备大尺寸晶圆、良好电学特性、地壳丰富、良好的SiO2绝缘层</p>
+<p>当前最主流制备多晶硅的方法是“改良西门子法”，其余方法有硅烷法，冶金法</p>
+<p><strong>CMOS器件一般制备在100晶向的硅片上</strong>，这是因为100晶向的硅片表面悬挂键、界面态和缺陷比较少，在上面集成MOS管<strong>界面态</strong>更好，更<strong>利于控制沟道</strong>（Vth好控制），且迁移率更高。</p>
+<h3 id="_1">单晶硅的制备</h3>
+<p><strong>集成电路使用的电子级单晶硅片的制备流程</strong>：
+硅砂（三步氧化还原反应）--多晶硅--使用FZ或者CZ方法--单晶硅柱--打磨--定向--切片--<strong>抛光</strong>--打标--边缘处理--清洗--<strong>检测</strong>--单晶硅片</p>
+<p>过程主要的杂质是O和C，可能会导致泄露电流导致器件失效</p>
+<p>为了制备低杂质的单晶Si，使用Float Zone Growth，比CZ法更好</p>
+<p>常见制备GaAs晶圆的方法是 LEC 技术， 射频器件HEMT</p>
+<p>SiC晶圆：宽禁带，击穿电场更高，耐高温，适合功率器件，用作GaN的衬底，或者是JFET</p>
+<p>GaN一般应用于射频和功率器件，异质结双极性晶体管</p>
+<p><strong>分凝法</strong>
+拉单晶过程，晶体从熔体中拉出来时，进入晶体的掺杂浓度通常和融体中不同，杂质会被排斥到融体中，融体中的杂质会逐渐增加，利用这个原理，可以对单晶硅进行不断地提纯。靠近融体一侧的C杂质浓度更高。当分凝系数小于1的时候可以使用该方法进行提纯。</p>
+<p><strong>CZ法</strong>：在石英坩埚中融化多晶硅，使用单晶种慢慢接触融化晶体，然后一边旋转一边向上拉动，形成大的单晶硅棒。该方法可以制备大尺寸晶圆，工艺成熟产量大成本低，但存在杂质问题。
+<strong>FZ法</strong>：将多晶硅棒垂直放置，不使用坩埚，高频感应线圈在硅棒中局部高温熔化，逐步移动熔区使得熔化部分重新结晶为单晶。该方法没有接触坩埚，可以获得极高纯度的单晶。</p>
+<h2 id="epitaxy-and-thin-film-deposition">Epitaxy and Thin Film Deposition 外延和薄膜生长</h2>
+<p>半导体制造工艺三大核心设备：薄膜沉积、光刻和刻蚀设备
+Epitaxy：外延生长，在单晶衬底，按照衬底晶向生长单晶薄膜的工艺过程</p>
+<p><strong>为什么要进行外延生长</strong>：
+提高器件性能：外延层可以<strong>定制掺杂浓度和类型</strong>
+形成特殊的结构：如异质结构
+精确控制材料参数：如薄膜厚度和掺杂浓度分布
+降低<strong>缺陷密度</strong>
+可以获得<strong>洁净的新表面，平整的表面</strong></p>
+<p><strong>Growth V.S. Deposition</strong>
+<strong>沉积</strong>侧重于在晶圆表面使用物理或者化学的方法沉积一层材料，不依赖于基底结构，不强调特定的晶向对齐。常用的方法有PVD和CVD。
+<strong>生长</strong>侧重于在晶体基底上有序地延展生长，通常是外延生长，是在原有的晶向上继续延展。常用方法有VPE和MBE。具体来说包括金属有机化合物化学气相外延、分子束外延、原子层外延、等离子体增强外延、气相外延。</p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th><strong>CVD (Chemical Vapor Deposition)</strong></th>
+<th><strong>PVD (Physical Vapor Deposition)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>原理</strong></td>
+<td>依靠气体前驱体在高温下发生<strong>化学反应</strong>，沉积固体薄膜</td>
+<td>通过物理方式（<strong>蒸发或溅射</strong>）释放原子沉积成膜</td>
+</tr>
+<tr>
+<td><strong>沉积方式</strong></td>
+<td>化学反应控制 + 气体扩散</td>
+<td>物理释放 + 冷凝沉积</td>
+</tr>
+<tr>
+<td><strong>材料形态</strong></td>
+<td>气相反应物（通常为有毒/腐蚀性气体）</td>
+<td>固体靶材</td>
+</tr>
+<tr>
+<td><strong>设备环境</strong></td>
+<td>通常为高温、低压反应腔</td>
+<td>真空腔室（可为高真空或超高真空）</td>
+</tr>
+<tr>
+<td><strong>成膜形貌</strong></td>
+<td>非常<strong>致密、均匀且可 conformal（覆盖凹槽/孔）</strong></td>
+<td>覆盖性差，阴影效应明显，适用于平面结构</td>
+</tr>
+<tr>
+<td><strong>常用于材料</strong></td>
+<td>介质（如 SiO₂、Si₃N₄）、金属（如 W、TiN）、多晶硅</td>
+<td>金属（如 Al、Cu、Ti）、导电薄膜、反射层等</td>
+</tr>
+<tr>
+<td><strong>温度要求</strong></td>
+<td>较高（\~300–1000°C）</td>
+<td>可低温（\~室温–300°C）</td>
+</tr>
+<tr>
+<td><strong>适合结构</strong></td>
+<td>高纵深比结构（如沟槽、孔）</td>
+<td>平坦或简单结构</td>
+</tr>
+<tr>
+<td><strong>批量处理能力</strong></td>
+<td>好（可多片同时处理）</td>
+<td>通常为片对片处理</td>
+</tr>
+<tr>
+<td><strong>成本/安全性</strong></td>
+<td>气体有毒/腐蚀性，成本较高、安全性差</td>
+<td>相对安全，气体处理简单</td>
+</tr>
+<tr>
+<td><strong>工艺复杂度</strong></td>
+<td>高（需考虑化学反应动力学、气体输运等）</td>
+<td>较简单</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cvd-chemical-vapour-deposition">CVD Chemical Vapour Deposition 化学气相沉积</h3>
+<p>CVD 是一种在高温下通过气体反应生成固态薄膜的技术，具有沉积均匀性好、可控性强、适用材料广泛等优势，在微电子制造中被广泛使用。</p>
+<p>过程通常是<strong>气体混合注入反应腔体</strong>，气体<strong>扩散</strong>到基底表面，吸附到表面，然后发生<strong>化学反应</strong>，产生一系列副产品，副产品被解吸附并被排出腔体。CMOS工艺一般采用PECVD，等离子增强CVD，因为温度低。晶圆外延生长需要一个比较洁净的表面，这个表面可以通过一开始的attacking刻蚀过程获得（温度等参数可以控制过程是以刻蚀还是沉积为主）</p>
+<p>缺点：有一些材料找不到合适的化学反应，不合适一个混合材料的沉积</p>
+<p>同质外延：外延层和衬底是同一种材料，工艺简单但是成本比较高
+异质外延：外延层和衬底不是一种材料，工艺复杂但是成本低？
+极限厚度：晶体不匹配的情形下，应变层外延厚度增加时，表面晶格处存在应力，在某个临界点，应力累积到不能维持衬底晶格常数的情况下，晶格被破坏释放应力，此时厚度称为临界厚度。晶格被破坏会产生悬挂键和缺陷，影响性能。</p>
+<h3 id="_2">化学气相沉积的几种类型</h3>
+<p><strong>APCVD</strong>常压CVD
+一般用于厚氧化层生长。
+优点：沉积速度快，简单
+缺点：均匀性和纯度不如LPCVD
+<strong>Low Pressure CVD</strong>
+优点：均一平整，高纯度；致密；多个晶圆可以stacking，可以提高吞吐率。
+缺点：低沉积率；需要高温进行；需要精确的温度控制。
+通常用于多晶硅和介质层的沉积，也就是IC产业。
+<strong>Metal Organic CVD</strong>
+高灵活性，可以沉积半导体、金属和介质；但是剧毒，需要非常昂贵的原材料；常用于光电器件，III-V族半导体和一些金属工艺。
+<strong>Plasma Enhance CVD</strong>
+等离子体增强CVD技术，使用低温等离子体激光反应气体来沉积薄膜的CVD技术。
+优点是可以用在<strong>低温场景</strong>，缺点是工艺过程的参数非常多，等离子体会损伤材料，膜的质量低于其他的CVD技术，设备成本也高。通常用于介电层的沉积（如SiO2、Si3N4层）</p>
+<p>Si工艺一般使用LPCVD进行沉积Poly-Si、隔离层氧化物、高k介质和一部分金属</p>
+<p><strong>能带工程</strong>：能带工程指的是通过改变化学组分来改变器件的禁带宽度。用于异质结制备，laser二极管。
+<strong>Lattic Misfit 晶格失配</strong>：晶格常数与原始晶格常数的变化比？</p>
+<div class="arithmatex">\[
+f = \frac{a_{\text{film}} - a_{\text{substrate}}}{a_{\text{substrate}}}
+\]</div>
+<p><strong>Deposition Rate</strong>：沉积率通常和温度有关。高温瓶颈是气体迁移率，低温瓶颈是表面的反应速率</p>
+<h3 id="ald-atomic-layer-deposition">ALD Atomic Layer Deposition</h3>
+<p>可以视作是化学气相沉积的一种方式，可以做到原子级别控制，表面非常平整。ALD可以适用于多种不同的材料。</p>
+<h3 id="_3">外延沉积的一般要求</h3>
+<ul>
+<li>表面准备
+需要有一个洁净的表面，防止缺陷复制。可以使用HF酸进行表面处理，形成Si-H键</li>
+<li>表面迁移率
+需要高温，只有超过一个临界温度，表面的原子才是有序整齐的，提供足够的能量使得原子迁移到晶格位。
+需要一个相对较低的生长速率，太快会形成岛状，粗糙表面。</li>
+</ul>
+<h3 id="iii-v">III-V族元素的沉积技术</h3>
+<h4 id="mbe-molecular-beam-epitaxy">MBE molecular beam epitaxy 分子束外延</h4>
+<p>在超高真空中将高纯度材料进行加热蒸发，然后形成的分子束直接射向加热后的衬底
+优点：
+* 原子级别的精确控制
+* 可以在比较低温下进行
+* 高晶体质量（超高真空环境）
+缺点：
+* 生长速率慢，量产能力差
+* 成本高，需要真空环境
+* 设备庞大复杂</p>
+<p>需要在真空环境下进行，一些常用的真空泵包括：分子泵、机械泵、低温泵和油扩散泵</p>
+<h4 id="movpe-metal-organic-vapour-phase-epitaxy">MOVPE metal organic vapour phase epitaxy 金属有机气相沉积</h4>
+<p>也可以称为 MOCVD metal organic chemical vapour deposition
+GaAs，使用Ga(CH3)3和AsH3
+GaN，使用Ga(CH3)3和NH3
+1、前驱气体的供给，通常包括金属有机化合物和氢化物气体，使用载气驱动进入反应腔体
+2、衬底加热
+3、发生化学反应，并产生有机副产品。原子排列按照衬底晶格继续生长，实现外延结构形成。
+4、副产物的排出</p>
+<p>优点：
+* 高生长速率，适合量产
+* 可以实现比较复杂的结构
+* 工艺成熟，设备稳定
+* 衬底兼容性高</p>
+<p>缺点：
+* 高温要求
+* 成本高，有些前驱气体有毒
+* 副产物容易污染</p>
+<table>
+<thead>
+<tr>
+<th>对比项</th>
+<th><strong>CVD</strong></th>
+<th><strong>MOCVD</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>前驱体类型</strong></td>
+<td>一般为无机气体（如 SiH₄、NH₃、BCl₃ 等）</td>
+<td>使用金属有机化合物（如 TMGa、TMAl）+ 氢化物气体（如 AsH₃）</td>
+</tr>
+<tr>
+<td><strong>适用材料</strong></td>
+<td>Si、SiO₂、Si₃N₄、金属薄膜等</td>
+<td>GaAs、InP、GaN、AlGaN、InGaAs 等 III-V 族材料</td>
+</tr>
+<tr>
+<td><strong>目标</strong></td>
+<td>薄膜沉积为主（可多晶/非晶/单晶）</td>
+<td><strong>外延生长</strong>（单晶结构）为主</td>
+</tr>
+<tr>
+<td><strong>反应温度</strong></td>
+<td>通常较高（\~600–1200℃）</td>
+<td>中高温（\~500–1100℃）</td>
+</tr>
+<tr>
+<td><strong>沉积速率</strong></td>
+<td>高（可达 μm/min）</td>
+<td>适中（\~0.1–5 μm/min）</td>
+</tr>
+<tr>
+<td><strong>设备复杂度</strong></td>
+<td>相对较低，已广泛产业化</td>
+<td>相对更复杂，尤其是气体控制精度要求高</td>
+</tr>
+<tr>
+<td><strong>典型应用</strong></td>
+<td>MOS器件的氧化层、氮化层、金属层沉积</td>
+<td>LED、激光器、HEMT、量子器件等 III-V 材料生长</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pvd">PVD</h3>
+<p><strong>Thermal Evaporation 热蒸发</strong></p>
+<p><strong>E-beam evaporator 电子束蒸发</strong>：电子枪发射高能电子束，轰击靶材，蒸发出来的原子或者分子以气相飞向基底，在基底凝结形成薄膜。该过程在高真空环境中进行。
+优点是：相比于传统的热蒸发速率高，可以蒸发高熔点的材料；蒸发纯洁，薄膜质量高；容易控制蒸发速率；可以用于沉积多种的材料；更好进行剥离
+缺点是覆盖率一般，是line of sight覆盖；表面比较粗糙</p>
+<p><strong>sputtering 溅射</strong>
+产生等离子体，离子轰击靶材，原子被溅射出来飞向基底，凝结形成薄膜。该过程在低真空环境下进行。等离子体的气体一般选用<strong>氩气</strong>，因为它的原子量高，动能传递有效；化学惰性，不产生化学反应；无毒安全。</p>
+<p><strong>PVD技术的主要问题</strong>
+* 侧壁沉积薄
+* 接触孔底部薄膜不联系
+相比之下，CVD技术具有较高的表面迁移能力，形成的表面具有良好的一致性，侧壁和底部覆盖均匀。</p>
+<h2 id="oxidation">Oxidation 氧化</h2>
+<p>为什么硅大量用于IC技术，因为Si和SiO2之间可以形成很好的界面。特别是100晶向的硅片，Si/SiO2的界面质量更高。
+SiO2具有高电介质常量，可以提供一个<strong>较高的栅氧电容</strong>；<strong>高击穿电场</strong>；在掺杂过程中可以<strong>作为一个天然的mask</strong>；使用HF可以很好的刻蚀SiO2；可以作为FOX进行晶体管之间的隔离；可以作为Metal之间的保护层。</p>
+<h3 id="thermal-oxidation">Thermal Oxidation</h3>
+<p>分为干法和湿法</p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>干法氧化（Dry Oxidation）</th>
+<th>湿法氧化（Wet Oxidation）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>氧化剂</strong></td>
+<td>干燥的氧气（O₂）</td>
+<td>水蒸气（H₂O）或氧气加氢气产生的水蒸气</td>
+</tr>
+<tr>
+<td><strong>氧化速率</strong></td>
+<td>慢</td>
+<td>快（约快10倍）</td>
+</tr>
+<tr>
+<td><strong>氧化温度</strong></td>
+<td>高（900–1200°C）</td>
+<td>同样是高温（800–1100°C）</td>
+</tr>
+<tr>
+<td><strong>氧化层厚度控制</strong></td>
+<td>精确，适合薄氧化层（&lt;100 nm）</td>
+<td>易于生成厚氧化层（&gt;100 nm）</td>
+</tr>
+<tr>
+<td><strong>氧化层质量</strong></td>
+<td>极高，致密，界面态少</td>
+<td>相对略低，界面可能存在更多缺陷</td>
+</tr>
+<tr>
+<td><strong>常见应用</strong></td>
+<td>MOSFET的栅氧层、精密器件</td>
+<td>LOCOS场氧化层、钝化层等</td>
+</tr>
+<tr>
+<td><strong>对硅晶体影响</strong></td>
+<td>损伤小，界面平整</td>
+<td>潜在应力较大</td>
+</tr>
+</tbody>
+</table>
+<p>干法 Si + O2 -&gt; SiO2</p>
+<p>湿法 Si + 2H2O -&gt;SiO2 + 2H2</p>
+<p><strong>影响氧化速率的因素</strong>包括：
+氧化剂、温度、气体分压、硅晶向（111方向最快），掺杂浓度越高氧化速率越快</p>
+<h3 id="locos">LOCOS</h3>
+<p>英文全称是Local Oxidation of Silicon</p>
+<p>工艺流程：</p>
+<p>1、在硅片上生长一层薄氧化层（起缓冲作用）；</p>
+<p>2、沉积一层氮化硅（Si₃N₄），用作氧化屏蔽层；</p>
+<p>3、使用光刻+刻蚀技术，仅在非有源区保留氮化硅；</p>
+<p>4、在裸露的区域进行热氧化，即在无Si₃N₄保护的地方生长氧化层；Si₃N₄遮挡的地方几乎不氧化，有源区保持裸硅状态；</p>
+<p>5、最后去掉氮化硅，进入后续掺杂/扩散等步骤。</p>
+<h3 id="soi">SOI</h3>
+<p>在Substrate上面构建一个绝缘层Buried Oxide用作支撑。</p>
+<p>SOI的优势：</p>
+<ul>
+<li>低漏电：体区被隔离，漏电流下降，导致功耗也会有所降低</li>
+<li>抗软错误强：粒子撞击难以引发电荷扩散</li>
+<li>速度快：寄生电容小，开关速度更快</li>
+<li>温度适应性强：温度变化对阈值的影响较小</li>
+<li>没有寄生双极型晶体管效应，也就是没有Latch-up效应</li>
+</ul>
+<p>SOI的劣势：</p>
+<ul>
+<li>成本高 </li>
+<li>散热性较差</li>
+<li>工艺不通用</li>
+</ul>
+<p>制作SOI的方法</p>
+<ul>
+<li>Direct Wafer Bonding</li>
+<li>Smartcut</li>
+</ul>
+<h2 id="photolithography">Photolithography 光刻技术</h2>
+<p>光刻是将图形转移到substrate的一种光学方法。</p>
+<p><strong>Photoresist</strong>是一种对光敏感的<strong>有机聚合物材料</strong>，通过光照后发生化学性质变化，从而实现对硅片表面图案的转移。</p>
+<p><strong>光刻过程</strong>：1）表面准备HMDS 2）光刻胶旋涂 3）前烘 4）曝光 5）显影 6）后烘 7）检测</p>
+<p>下面是具体的介绍：</p>
+<ul>
+<li>Spin旋涂：涂光刻胶过程的几种缺陷：条纹、边缘过厚、裂纹</li>
+<li>Soft Bake 前烘：涂覆厚的光刻胶进行中温加热，使得光刻胶内的<strong>溶剂部分挥发</strong>，<strong>胶层更加稳定</strong>，为后续的曝光做好准备；同时可以<strong>改善附着力</strong>，防止显影或者刻蚀时脱胶。</li>
+<li>Wafer Cooling</li>
+<li>Align and Exposure 曝光</li>
+<li>Develop 显影</li>
+<li>Hard Bake 后烘：<strong>彻底去除光刻胶的残余溶剂</strong>，使得<strong>光刻胶牢固地粘附在表面</strong>，<strong>提高抗蚀性</strong>。如果烘烤不到位，会导致光刻胶的抗蚀性不够；烘烤过度会导致PR流动，降低分辨率。
+*Etch 刻蚀<ul>
+<li>wet acid etch</li>
+<li>dry plasma etch</li>
+</ul>
+</li>
+</ul>
+<p>Removal (Strip) ：去除光刻胶，可以使用湿法溶解和dry plasma strip</p>
+<p><strong>两种光刻胶</strong></p>
+<ul>
+<li>正胶：光照后溶解，图形和mask一致，分辨率更高</li>
+<li>负胶：图案与mask相反，成本更低</li>
+</ul>
+<p>光刻的三种设备：Contact、Proximity、Steppers。
+光刻胶的主要成分是聚合物、溶剂、感光物质和添加剂。
+理想的光刻胶应该有高的分辨率、对离子注入和刻蚀的阻挡能力强、好的吸附性</p>
+<h3 id="_4">光刻的两个参数</h3>
+<p><strong>Resolution</strong></p>
+<p>分辨率决定了最小的特征尺度。</p>
+<div class="arithmatex">\[
+R = \frac{K_1\lambda}{NA}
+\]</div>
+<p>其中NA是数值孔径，λ是光波长。</p>
+<p><strong>Depth of focus（DOF）</strong></p>
+<div class="arithmatex">\[
+DOF=\frac{K_2\lambda}{2(NA)^2}
+\]</div>
+<p>增加NA会导致DOF降低，所以我们更倾向于降低波长来提高分辨率。我们还可以使用浸没式光刻，提高n使得NA变高。</p>
+<p><strong>光的衍射</strong>导致感光区域和mask并不对应，可以通过加透镜/相移掩膜的方法</p>
+<h3 id="_5">先进光刻技术</h3>
+<h4 id="_6">多重曝光技术</h4>
+<h4 id="_7">浸没式光刻</h4>
+<p>通过增加n进一步增加NA，减小分辨率</p>
+<h4 id="opc">OPC 光学邻近修正</h4>
+<p>由于衍射效应会导致图形边缘的模糊，使用一些修正技术使得图像边缘更加明辨</p>
+<h4 id="phase-shift-masking">Phase Shift Masking</h4>
+<p>用于改善光刻分辨率和对比度，通过控制光的相位来增强图形边缘清晰度。增加一个180°相位，使得中间暗的区域被抵消掉，暗部更暗。</p>
+<h4 id="_8">下一代光刻技术</h4>
+<p><strong>EUV光刻</strong>：光源功率、多层膜反射率等问题，但是已经逐步获得规模应用</p>
+<p><strong>X-Ray光刻</strong>：掩膜接近1:1且X光穿透性强，掩膜制作困难，成本高；好处是波长更短，高分辨率，几乎没有衍射现象，光刻板寿命更长？</p>
+<p><strong>电子束光刻</strong>：直接将图形写到光刻胶上面。优点1）是不需要掩膜版2）分辨率比光刻要高，没有衍射效应带来的局限3）可以用来制作光刻使用的掩膜版；缺点是非常慢，成本很高，还有电子散射现象。</p>
+<p>微压印技术：难以满足高分辨率和高产率要求，1:1掩膜制备困难，脱模缺陷等问题突出</p>
+<p>STM or AFM光刻：直接从原子层面实现结构，无需光刻刻蚀</p>
+<h2 id="etching-process">Etching Process 刻蚀工艺</h2>
+<p>通过图形化的光刻胶掩膜，将材料从晶圆表面选择性地移除，形成所需要的结构或图形。</p>
+<p><strong>干法刻蚀和湿法刻蚀</strong></p>
+<table>
+<thead>
+<tr>
+<th>工艺类型</th>
+<th>特点</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>湿法刻蚀（Wet Etch）</strong></td>
+<td>化学溶液中反应，等向性强，容易“咬边”</td>
+<td>制作非关键层、牺牲层去除等</td>
+</tr>
+<tr>
+<td><strong>干法刻蚀（Dry Etch）</strong></td>
+<td>使用等离子体，方向性强，可控性好</td>
+<td>主流工艺，用于关键层、高精度图形转移</td>
+</tr>
+</tbody>
+</table>
+<p><strong>等离子刻蚀（干法）</strong></p>
+<p>Capacitive Coupled Plasma-CCP，等离子体由RF电流驱动</p>
+<p>Inductively Coupled Plasma，两个RF源单独控制离子浓度和能量。这种方法离子浓度更高，损伤更小，低压运行。</p>
+<p>湿法刻蚀的各向同性导致垂直性不够好</p>
+<p>使用化学方法刻蚀的选择性比等离子体刻蚀要好</p>
+<p><strong>干法刻蚀相比于湿法刻蚀的优点</strong>：</p>
+<p>1、sidewall更加垂直，方向性好，各向异性。</p>
+<p>2、较小的光刻胶位移</p>
+<p>3、均一性更好</p>
+<p><strong>物理刻蚀和化学刻蚀</strong></p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>物理刻蚀</td>
+<td>利用高能粒子轰击，各向异性</td>
+<td>选择性差，速率低</td>
+</tr>
+<tr>
+<td>化学刻蚀</td>
+<td>利用化学反应使得材料变成可挥发的，各向同性</td>
+<td>选择性好 速率块</td>
+</tr>
+</tbody>
+</table>
+<h3 id="photoresist-removal">Photoresist Removal</h3>
+<ul>
+<li>Solvent</li>
+<li>Plasma Ashing
+一种常见的方法是等离子体轰击O2形成的氧原子和离化电子对光刻胶进行轰击</li>
+<li>Resist stripping</li>
+</ul>
+<h3 id="digital-etching">digital etching</h3>
+<p>在先进制程中，制备thin等精细结构的一种刻蚀方法。通过在表面生长一层自限的plasma层，然后用酸一层一层地去刻蚀。可以实现超精细结构控制。</p>
+<h2 id="cmp">CMP</h2>
+<p>CMP不等同于Lapping，CMP会有一个自动终止的位置。</p>
+<p><strong>为什么需要CMP？</strong></p>
+<ul>
+<li>将不同的层都微缩到一个较小的尺寸；</li>
+<li>将表面进行平整化处理，便于后续层的光刻刻蚀等操作；</li>
+<li>用于多层互联和隔离。</li>
+</ul>
+<p><strong>CMP的耗材</strong>主要有pad和抛光液</p>
+<h2 id="_9">互联工艺</h2>
+<p>铜正在取代Al的互连</p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>铝互连（Al Interconnect）</th>
+<th>铜互连（Cu Interconnect）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>电阻率</strong></td>
+<td>高（约 2.65 μΩ·cm）</td>
+<td>低（约 1.68 μΩ·cm）→ 更快传输</td>
+</tr>
+<tr>
+<td><strong>电迁移可靠性</strong></td>
+<td>差，容易形成空洞</td>
+<td>好，不易迁移 → 更高可靠性</td>
+</tr>
+<tr>
+<td><strong>蚀刻方式</strong></td>
+<td>易蚀刻（干法刻蚀）→ 工艺简单</td>
+<td>不易蚀刻 → <strong>需用CMP方式图形化</strong></td>
+</tr>
+<tr>
+<td><strong>图形工艺</strong></td>
+<td>传统“减法工艺”：<br>沉积 → 光刻 → 刻蚀</td>
+<td>“<strong>镶嵌工艺（Damascene）</strong>”：<br>先刻沟槽 → 镀铜 → CMP</td>
+</tr>
+<tr>
+<td><strong>衬底材料兼容性</strong></td>
+<td>与SiO₂界面稳定</td>
+<td>与SiO₂会扩散，需加<strong>阻挡层（如Ta/TaN）</strong></td>
+</tr>
+<tr>
+<td><strong>使用时代</strong></td>
+<td>主要用于90nm及以前节点</td>
+<td>90nm及以下主流采用铜</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Electromigration 电迁移</strong>：当导线通过高电流的时候，电子会轰击原子导致原子错位，最终可能会形成空洞，导致互联失效。Al的可靠性比Cu低。</p>
+<h3 id="_10">大马士革工艺</h3>
+<p>由于Cu的刻蚀率比较低，所以一般使用大马士革工艺进行制备</p>
+<ol>
+<li>沉积绝缘介电层
+如 SiO₂、低k材料，用来电气隔离互连金属。</li>
+<li>光刻并刻蚀沟槽
+用光刻+刻蚀方法在介电层中刻出需要布线的位置（沟槽/孔洞）。</li>
+<li>沉积阻挡层（Barrier Layer）
+防止铜扩散进介电层。该层必须要足够的thin。常用材料：Ta/TaN。</li>
+<li>沉积种子层（Seed Layer）
+为后续电镀铜提供导电底层，常用薄铜层。</li>
+<li>铜电镀（Electroplating）
+在种子层上电镀出厚铜层，填满沟槽。</li>
+<li>化学机械抛光（CMP）
+利用CMP去除多余铜和阻挡层，只留下沟槽中的铜线。</li>
+</ol>
+<p><img alt="大马士革示意图" src="../images/damashige.png" /></p>
+<h3 id="low-k">互联工艺的low-k材料</h3>
+<p>使用低k介质，可以减小互连之间的寄生电容，从而提高速度、降低功耗。
+比较常用的材料有SiOF（FSG）、OSG（兼容Cu和CMP）</p>
+<h2 id="doping">Doping 掺杂</h2>
+<h3 id="diffusion">Diffusion 扩散</h3>
+<p>扩散工艺是利用了高温下杂质原子在硅晶体中的扩散作用，使其从表面向硅片内部扩散，形成一定浓度和分布的杂质分布层。一般用作于MOS源漏的掺杂，不适合很浅或者是浓度很精确的沟道。</p>
+<p><strong>掺杂的优点</strong></p>
+<ol>
+<li>表面损伤小</li>
+<li>价格低</li>
+<li>容易获得比较深或者高浓度的结</li>
+</ol>
+<p><strong>掺杂的缺点</strong></p>
+<ol>
+<li>只能形成特定形状（受制于扩散方程） </li>
+<li><strong>各向同性</strong>工艺，总会扩散到掩膜层下方</li>
+<li>扩散深度和表面浓度相关，不适合超浅结掺杂 </li>
+<li><strong>高温</strong>时间长</li>
+</ol>
+<p><strong>过程</strong></p>
+<p>硅片清洗-氧化-形成刻蚀窗口-光刻胶剥离-硅片清洗-杂质氧化物沉积-扩散推进-氧化物剥离</p>
+<p><strong>影响扩散的一些因素</strong>包括温度、点缺陷和浓度分布</p>
+<p>Two-step diffusion 两步掺杂技术</p>
+<ol>
+<li>预掺杂：将掺杂剂引入到硅表面，形成一定浓度的掺杂源层。该过程为恒定掺杂浓度扩散。</li>
+<li>Drive-in：恒定掺杂总量扩散。扩散驱动，持续加热更长时间，掺杂剂扩散更深。</li>
+</ol>
+<p>薄膜电阻测量：四探针法、霍尔效应法</p>
+<p>扩散结深Xj：磨角染色法</p>
+<p>杂质浓度分布：C-V法</p>
+<p><strong>扩散方法的改进</strong>：快速气相掺杂，用于制作超浅结。</p>
+<h3 id="ion-implantation">Ion Implantation 离子注入</h3>
+<p>利用高压加速掺杂元素的离子，将其注入到硅片表面，嵌入到晶体内部，形成掺杂区域，最后使用热退火技术恢复损伤，激活掺杂原子。</p>
+<p><strong>Channeling effect</strong></p>
+<p>某些晶向会形成规则排列的开放通道，当离子沿着这些方向注入的时候，几乎不予晶格原子发生碰撞，能够深入穿透到晶体内部，导致掺杂不均匀。减少沟道效应的方法是：倾斜硅片，预非晶化（使用Si+使得Si表面非晶化）</p>
+<p><strong>Post-impant Annealing and Activation</strong></p>
+<p>离子注入后需要进行一步额外的退火操作，这是为了<strong>修复被损伤的晶格</strong>，并且<strong>激活那些注入的离子</strong>。一种常用的方式是Rapid Thermal Annealing，即快速热退火，可以<strong>减少瞬间扩散</strong>。还有一种比较新颖的方式是Pulsed Laser Annealing，脉冲激光退火，可以用于制备超浅结。</p>
+<p><strong>离子注入法的优缺点</strong></p>
+<p>优点：</p>
+<ul>
+<li>可以<strong>精确控制掺杂剂的浓度</strong>与分布</li>
+<li>可以独立控制浓度和结深</li>
+<li>速度快，工艺时间短</li>
+<li>通过多重注入实现复杂的分布</li>
+<li><strong>低温过程</strong></li>
+<li>各向异性</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>很多缺陷无法通过退火进行修复</li>
+<li>通常比扩散的方法的杂质浓度更高</li>
+<li>通常会使用一些有毒气体源</li>
+<li>价格高昂</li>
+</ul>
+<p><img alt="离子注入和扩散" src="../images/%E7%A6%BB%E5%AD%90%E6%B3%A8%E5%85%A5%E5%92%8C%E6%89%A9%E6%95%A3.png" /></p>
+<h2 id="cmos">CMOS工艺集成</h2>
+<p><strong>Well tap cell</strong>是一种连接衬底或阱区到电源/地的结构，能够提供到地的低阻通道，避免Latch-up效应。</p>
+<p>CMOS工艺一般采用100晶向的Si，因为表面态密度比较低，对阈值电压的控制比较好。为了进一步提高对阈值电压的控制，还会采用<strong>外延生长P-epi</strong>（掺杂更均匀，晶格缺陷少，杂质更少）</p>
+<p><strong>为什么要外延一个P-epi</strong>：1）利于n-well制备 2）降低表面杂质，缺陷，可以提高晶体管性能 3）轻掺杂，便于控制Vth。</p>
+<p><strong>为什么现代CMOS工艺采用N-Well CMOS</strong></p>
+<ol>
+<li>更低的基底偏置效应</li>
+<li>较低的寄生电容</li>
+<li>NMOS晶体管天然的速度更快。</li>
+</ol>
+<p>当然现在也有双阱工艺能够同时结合N-well和P-well的优点。由于N-well工艺，bulk的电压和source的电压是可以相等的，某种程度上消除了基底偏置？再者就是N-well的掺杂浓度更低，会降低体效应参数。而低掺杂会导致耗尽区宽度大，进而降低了寄生电容。</p>
+<p><strong>为什么采用Poly-Si</strong>：可以用作自对准工艺，后续流程不会融化。</p>
+<p><strong>自对准工艺的优点</strong></p>
+<p>使用栅极作为掩膜，直接决定源/漏区域的注入位置，从而达到对齐的目的。</p>
+<ol>
+<li>只需要一个掩膜，工艺变简单</li>
+<li>大大减少了栅极和源漏之间的交叠电容（因为掺杂不会偏差太多，特别是使用离子注入的方式）</li>
+<li>能够降低PMOS的工作电压</li>
+</ol>
+<p><strong>使用Silicide作为接触物</strong></p>
+<p>Silicide例如NiSi是金属和Si形成的化合物，可以在源漏栅进行低电阻接触，可以抗高温退火、自对准、不容易扩散进入Si，可以和Si反应形成接触。</p>
+<p>使用Silicide的优点：</p>
+<ol>
+<li>降低电阻。</li>
+<li>减少金属和Si沟道之间的电阻，提高开关速度。</li>
+<li>更稳定的界面，降低金属扩散进入Si。</li>
+<li>硅化物形成作为缓冲过渡带，减少界面缺陷，提高粘附力。</li>
+</ol>
+<p>Silicide形成的过程是自对准的，只需要在已经形成CMOS结构的基础上直接沉积金属，金属和Si接触的地方会形成硅化物，而与SiO2接触的地方则不会。最后直接移除金属即可。</p>
+<h2 id="finfet">FinFET</h2>
+<p>为什么要进行持续的微缩化？</p>
+<p>1）降低寄生参数，降低功耗</p>
+<p>2）提高晶体管的开关速度</p>
+<p>3）增加集成度，实现更复杂的功能</p>
+<p>4）降低成本</p>
+<p><img alt="FinFET" src="../images/finfet.png" /></p>
+<h3 id="_11">短沟道效应</h3>
+<p><strong>V-TH Roll off</strong>：当沟道太短的时候，D实际上控制了沟道，而不是Gate。</p>
+<p><strong>DIBL</strong>：漏极导致势垒降低。漏端有电压时会导致沟道势垒的降低，电子直接通过了。
+在短沟道的前提下，如果体厚度越大，D对S/沟道的耦合效应越强，栅的控制能力越弱。所以为了降低体厚度，人们研发了SOI晶体管。</p>
+<h3 id="finfet_1">FinFET的优点</h3>
+<ul>
+<li>更好的栅极控制能力</li>
+<li>更大的驱动电流</li>
+<li>降低了电源功耗：提高栅极控制能力抑制了漏电流和亚阈值导通，显著降低静态功耗</li>
+<li>迈向了3D集成</li>
+</ul>
+<h3 id="finfet_2">FinFET的制作工艺</h3>
+<p>在缺少高分辨率光刻机的情况下，通常使用多重曝光技术：</p>
+<p>1、LELE工艺
+<img alt="LELE" src="../images/LELE.png" /></p>
+<p>2、LFLE工艺
+<img alt="LFLE" src="../images/LFLE.png" /></p>
+<p>3、SADP工艺
+<img alt="SADP" src="../images/SADP.png" /></p>
+<h2 id="hkmg">HKMG</h2>
+<p><strong>High-K介质解决的主要问题</strong>：随着沟道长度的缩小，根据等比例缩放原则，Oxide的厚度也需要进一步的下降。但是如果继续使用SiO2作为中介层，厚度将会被缩小到不能被接受，即电子隧穿效应会变得显著，漏电流增加。<strong>在保持栅电容不变的情况下，k越高，物理厚度可以越大，有利于降低栅介质漏电</strong></p>
+<p><strong>对High-K介质的要求</strong>：高介电常数、<strong>宽禁带</strong>、能够在Si上高纯度生长，形成<strong>良好的表面</strong>、高热稳定性，与半导体的能带之间的<strong>带阶</strong>要合适。综合考虑下来，只剩下HfO2和ZrO2，以及他们的硅化物可以和Si进行比较好的结合。</p>
+<p>如何生长HfO2？使用ALD。</p>
+<p>ZrO2的结晶温度比较低，HfO2的结晶温度相对更高。为了进一步提高结晶温度，可以加入N。</p>
+<h2 id="metal-gate">Metal Gate</h2>
+<p><strong>早期放弃Metal gate而使用Poly Si</strong>：可以通过掺杂调控Vth，自对准工艺可以控制扩散区域，热稳定性好，后续工艺的高温不会使得Poly Si融化。</p>
+<p><strong>为什么又重新回到了Metal Gate？</strong></p>
+<p>1、Poly-Si和High-K介质进行结合时，PolySi表面和HighK材料之间形成了大量的<strong>表面态</strong>，会捕获电子或者空穴，导致<strong>费米能级被钉扎</strong>到某个固定位置，<strong>无法通过自由掺杂调节Poly-Si的功函数</strong>。因而导致了Vth偏移，nMOS和pMOS无法分别优化。</p>
+<p>2、多晶硅的<strong>耗尽现象</strong>比较严重</p>
+<p>3、多晶硅中的<strong>掺杂原子会扩散</strong>进入Si</p>
+<p><strong>使用金属的好处</strong></p>
+<p>1、没有耗尽现象
+2、提高了界面质量，避免了费米能级钉扎现象
+3、没有掺杂剂的扩散现象
+4、更高的电导</p>
+<p><strong>如何选择金属？</strong>
+PMOS要求高的功函数，NMOS要求小的功函数。需要耐高温。</p>
+<p><img alt="制备工艺" src="../images/%E5%88%B6%E5%A4%87MG.png" /></p>
+<p>如果采用Gate-First工艺，那么进行S/D形成的高温会影响金属的性质，所以我们采用Gate-Last工艺，这样还可以利用自对准的优点。</p>
+<p><strong>Cu金属互联相比于Al的优势</strong>：
+Cu电阻率低，互联损坏低；Cu熔点更高；RC延时更小，速度更快；热膨胀小；<strong>Cu的电迁移小</strong></p>
+<h2 id="strain-engineering">Strain Engineering</h2>
+<p>通过施加应力改变晶体结构，从而导致迁移率、有效质量等发生变化，从而提高晶体管的速度。</p>
+<p>1、对于PMOS晶体管，通常会施加压应力Verticle Stress，提高空穴的迁移率，常用的方法是生长SiGe。</p>
+<p><img alt="eSiGe" src="../images/pmos%E5%8E%8B%E5%BA%94%E5%8A%9B.png" /></p>
+<p>生长SiGe采用Ultra-high Vacuum CVD工艺，这是因为<strong>SiGe极易和O元素发生反应，UHV主要为了降低气体中的氧含量</strong>，SiGe源漏阱区的掺杂是通过通入磷烷和硼烷气体实现反应掺杂。在生长SiGe之前需要使用H2进行高温预处理，去除Si表面的一些氧化物、C污染和金属残留等。</p>
+<p>这种方法生长出来的Ge含量过高时缺陷比较多，一种改进的方法是渐变分组SixGe1-x。可以获得更高质量的晶体、更少的缺陷、更高的Ge含量。</p>
+<p>2、对于NMOS可以采用SiC的方法，增加沿着沟道方向的拉应力和垂直沟道的压应力。该结构还会在源和沟道之间形成一个势垒，降低了低Vds下的电流。</p>
+<p>3、可以采用CESL技术分别对NMOS和PMOS采用不同的材料进行施加应力，该方法的缺点是间接施加，效率比较低。</p>
+<p>4、SMT技术 Stress Memorization Technology。通过<strong>高温退火</strong>记住应力层引入的晶格畸变，及时应力源被移除了，但是晶体仍然保持一定的残余应力。</p>
+<h2 id="mos">MOS管结构创新</h2>
+<p>从FinFET到GAA
+<img alt="结构创新" src="../images/GAA1.png" /></p>
+<p>比较新的nanosheet晶体管
+<img alt="Nanosheet" src="../images/nanosheet.png" /></p>
+<p>从nanosheet到forksheet，NMOS和PMOS之间的距离被被缩小
+<img alt="Nanosheet" src="../images/forksheet.png" /></p>
+<h2 id="mos_1">MOS管材料创新</h2>
+<p>Ge对空穴的迁移率高，III-V族元素对电子的迁移率高，分别替代Si可以显著提高性能</p>
+<p><img alt="材料创新" src="../images/%E6%9D%90%E6%96%99%E5%88%9B%E6%96%B0.png" /></p>
+<p>一种典型的高迁移率n型沟道半导体材料 GaAs、lnGaAs</p>
+<p>SiC基半导体器件的优势是宽禁带材料、击穿电场更大、迁移率更高、散热更好。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "navigation.footers", "search.suggest", "search.highlight", "navigation.instant", "navigation.expand"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
