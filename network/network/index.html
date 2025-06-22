@@ -1,0 +1,2381 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="He Jiazhen(何家镇)">
+      
+      
+        <link rel="canonical" href="https://hokachan2004.github.io/eepages/network/network/">
+      
+      
+        <link rel="prev" href="../../os/os/">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>计算机网络 - Jiazhen's Personal Pages</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="grey">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Jiazhen&#39;s Personal Pages" class="md-header__button md-logo" aria-label="Jiazhen's Personal Pages" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jiazhen's Personal Pages
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              计算机网络
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="grey"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  主页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../micro-process/process/" class="md-tabs__link">
+          
+  
+  
+  EE专业课程
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Jiazhen&#39;s Personal Pages" class="md-nav__button md-logo" aria-label="Jiazhen's Personal Pages" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Jiazhen's Personal Pages
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    主页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    EE专业课程
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            EE专业课程
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../micro-process/process/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    微电子工艺
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../os/os/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    操作系统
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    计算机网络
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    计算机网络
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      物理层
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="物理层">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      编码
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="编码">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      编码理论
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      数字编码技术
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      复用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="复用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tdm" class="md-nav__link">
+    <span class="md-ellipsis">
+      时分复用 TDM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stdm" class="md-nav__link">
+    <span class="md-ellipsis">
+      统计时分复用 STDM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fdm" class="md-nav__link">
+    <span class="md-ellipsis">
+      频分复用 FDM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cdm" class="md-nav__link">
+    <span class="md-ellipsis">
+      码分复用 CDM
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      物理层的设备
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据链路层
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数据链路层">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      封装成帧
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      差错控制与纠错
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="差错控制与纠错">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      奇偶校验码
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crc" class="md-nav__link">
+    <span class="md-ellipsis">
+      CRC 循环冗余校验码
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      海明码
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      流量控制与可靠传输
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="流量控制与可靠传输">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      停止等待协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#n-gbn" class="md-nav__link">
+    <span class="md-ellipsis">
+      回退N帧协议 GBN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sr" class="md-nav__link">
+    <span class="md-ellipsis">
+      选择重传SR协议
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      介质访问控制
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="介质访问控制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aloha" class="md-nav__link">
+    <span class="md-ellipsis">
+      纯ALOHA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csma" class="md-nav__link">
+    <span class="md-ellipsis">
+      CSMA协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8023" class="md-nav__link">
+    <span class="md-ellipsis">
+      802.3帧
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      无线网帧
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csmacd" class="md-nav__link">
+    <span class="md-ellipsis">
+      CSMA/CD协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csmaca" class="md-nav__link">
+    <span class="md-ellipsis">
+      CSMA/CA协议
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      局域网
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      网络层
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="网络层">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ipv4" class="md-nav__link">
+    <span class="md-ellipsis">
+      IPV4
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      子网划分技术
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cidr" class="md-nav__link">
+    <span class="md-ellipsis">
+      CIDR
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nat" class="md-nav__link">
+    <span class="md-ellipsis">
+      NAT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arp" class="md-nav__link">
+    <span class="md-ellipsis">
+      ARP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dhcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      DHCP协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipv6" class="md-nav__link">
+    <span class="md-ellipsis">
+      IPV6
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      转发过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      拥塞控制
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      路由算法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="路由算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      距离向量算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      链路状态算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      路径-向量路由算法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      传输层
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="传输层">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#udp" class="md-nav__link">
+    <span class="md-ellipsis">
+      UDP协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      传输层的差错控制和流量控制
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      TCP协议
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TCP协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tcp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      TCP建立连接
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcp_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      TCP释放连接
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      流量控制与可靠传输
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      拥塞控制
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      应用层
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="应用层">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      域名系统DNS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wwwhttp" class="md-nav__link">
+    <span class="md-ellipsis">
+      WWW与HTTP协议
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      物理层
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="物理层">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      编码
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="编码">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      编码理论
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      数字编码技术
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      复用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="复用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tdm" class="md-nav__link">
+    <span class="md-ellipsis">
+      时分复用 TDM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stdm" class="md-nav__link">
+    <span class="md-ellipsis">
+      统计时分复用 STDM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fdm" class="md-nav__link">
+    <span class="md-ellipsis">
+      频分复用 FDM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cdm" class="md-nav__link">
+    <span class="md-ellipsis">
+      码分复用 CDM
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      物理层的设备
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据链路层
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数据链路层">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      封装成帧
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      差错控制与纠错
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="差错控制与纠错">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      奇偶校验码
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crc" class="md-nav__link">
+    <span class="md-ellipsis">
+      CRC 循环冗余校验码
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      海明码
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      流量控制与可靠传输
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="流量控制与可靠传输">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      停止等待协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#n-gbn" class="md-nav__link">
+    <span class="md-ellipsis">
+      回退N帧协议 GBN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sr" class="md-nav__link">
+    <span class="md-ellipsis">
+      选择重传SR协议
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      介质访问控制
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="介质访问控制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aloha" class="md-nav__link">
+    <span class="md-ellipsis">
+      纯ALOHA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csma" class="md-nav__link">
+    <span class="md-ellipsis">
+      CSMA协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8023" class="md-nav__link">
+    <span class="md-ellipsis">
+      802.3帧
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      无线网帧
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csmacd" class="md-nav__link">
+    <span class="md-ellipsis">
+      CSMA/CD协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csmaca" class="md-nav__link">
+    <span class="md-ellipsis">
+      CSMA/CA协议
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      局域网
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      网络层
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="网络层">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ipv4" class="md-nav__link">
+    <span class="md-ellipsis">
+      IPV4
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      子网划分技术
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cidr" class="md-nav__link">
+    <span class="md-ellipsis">
+      CIDR
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nat" class="md-nav__link">
+    <span class="md-ellipsis">
+      NAT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arp" class="md-nav__link">
+    <span class="md-ellipsis">
+      ARP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dhcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      DHCP协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipv6" class="md-nav__link">
+    <span class="md-ellipsis">
+      IPV6
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      转发过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      拥塞控制
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      路由算法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="路由算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      距离向量算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      链路状态算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      路径-向量路由算法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      传输层
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="传输层">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#udp" class="md-nav__link">
+    <span class="md-ellipsis">
+      UDP协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      传输层的差错控制和流量控制
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      TCP协议
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TCP协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tcp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      TCP建立连接
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcp_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      TCP释放连接
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      流量控制与可靠传输
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      拥塞控制
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      应用层
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="应用层">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      域名系统DNS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wwwhttp" class="md-nav__link">
+    <span class="md-ellipsis">
+      WWW与HTTP协议
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">计算机网络</h1>
+<p>计算机网络是通过一定的技术将多台独立自主的主机相互连接起来的一个集合。</p>
+<p>Internet是一个专有名词，指的是当前全球最大的、开放的，由众多网络互联起来的特定的计算机网络。</p>
+<ul>
+<li>全球最大的开放性广域网</li>
+<li>TCP/IP 作为参考标准</li>
+<li>从 ARPNET 发展出来</li>
+</ul>
+<p><strong>为什么采用数据报的方式</strong></p>
+<ol>
+<li>轮流发送数据包，分时段处理报文，多线程处理事务。</li>
+<li>如果数据包丢失，只需要重传少量的数据包，降低出错开销。</li>
+<li>数据可以采用不同的路径，数据包可以单独传输。</li>
+</ol>
+<p>不同层次的数据有不同的名称</p>
+<table>
+<thead>
+<tr>
+<th>使用范围</th>
+<th>单元英文</th>
+<th>单元中文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据链路层</td>
+<td>frames</td>
+<td>帧</td>
+</tr>
+<tr>
+<td>网络层</td>
+<td>packets</td>
+<td>报文</td>
+</tr>
+<tr>
+<td>运输层</td>
+<td>segments</td>
+<td>段</td>
+</tr>
+</tbody>
+</table>
+<p><strong>分组交换与电路交换的差异</strong></p>
+<p>可以从最本质的区别，通信资源是否共享，利用率，延迟，开销，稳定性等方面进行比较。</p>
+<p>电路交换所有属于同一个连接的数据经过相同的路径，必须建立连接，适合实时连续通信。通信期间独占通信资源，通常带宽利用率比较低，建立连接时会有延迟，之后的延迟相对低且稳定。连接稳定可靠。除了建立连接的开销比较大，之后的开销比较小。</p>
+<p>分组交换不需要事先建立连接，每个分组独立传输，适合突发性的数据通信。带宽按需使用，可以共享链路资源。数据被拆分成多个分组，可能会乱序达到。分组交换无需连接，但每个分组的排队转发延迟可能会高。分组交换开销较大，因为每个分组都需要携带目的地址</p>
+<p><strong>OSI参考模型</strong></p>
+<p>由ISO组织提出，将网络划分为7个层次，每个层次有自己的特有的任务。下层向上层提供服务，层与层之间有接口，上层使用原语调用下层提供的服务。</p>
+<p><img alt="OSI" src="../images/OSI.png" /></p>
+<table>
+<thead>
+<tr>
+<th>层次</th>
+<th>特点</th>
+<th>关键字</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>应用层</td>
+<td>给用户展示交互接口</td>
+<td>浏览</td>
+<td>属于应用层</td>
+</tr>
+<tr>
+<td>展示层</td>
+<td>展示</td>
+<td>标准</td>
+<td>属于应用层</td>
+</tr>
+<tr>
+<td>会话层</td>
+<td>进程之间通信如何交流</td>
+<td>对话和交流</td>
+<td>属于应用层</td>
+</tr>
+<tr>
+<td>传输层</td>
+<td>终端到终端通信</td>
+<td>可靠性，流控制，错误纠正</td>
+<td>属于数据流层</td>
+</tr>
+<tr>
+<td>网络层</td>
+<td>路径选择</td>
+<td>路径选择，最优路径</td>
+<td>属于数据流层</td>
+</tr>
+<tr>
+<td>数据链路层</td>
+<td>介质访问</td>
+<td>帧和介质访问控制</td>
+<td>属于数据流层</td>
+</tr>
+<tr>
+<td>物理层</td>
+<td>二进制传输</td>
+<td>信号和介质</td>
+<td>属于数据流层</td>
+</tr>
+</tbody>
+</table>
+<p>分层实现了功能的解耦，标准化了接口，每层与每层之间标准化处理。分层还可以保证每层之间相互独立地发展。</p>
+<p><img alt="PDU" src="../images/PDU.png" /></p>
+<p><strong>TCP/IP参考模型</strong></p>
+<p>只有四层，将OSI的上三层进行合并成为应用层，将所有与应用程序相关的问题合并到一个层中，确保数据正确被打包到下一层。</p>
+<ul>
+<li>应用层：与应用相关的表示、编码和会话控制</li>
+<li>传输层：应用程序到应用程序之间的对话，处理服务质量的可靠性、流量控制拥塞控制和错误纠正，主要有TCP和UDP协议</li>
+<li>互联网层：主机到主机的寻址和路由Routing/Forwarding，最佳路径的确认发生在这一层，主要是IP协议</li>
+<li>网络接入层：完成物理实现和物理介质控制，包括OSI的数据链路层和网络层</li>
+</ul>
+<p><img alt="TCP" src="../images/TCP.png" /></p>
+<p><strong>典型的网络设备</strong></p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>集线器（Hub）</th>
+<th>网桥（Bridge）</th>
+<th>交换机（Switch）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>工作层</td>
+<td>物理层（第一层）</td>
+<td>数据链路层（第二层）</td>
+<td>数据链路层（第二层）</td>
+</tr>
+<tr>
+<td>作用范围</td>
+<td>一般用于同一个广播域</td>
+<td>可连接两个局域网</td>
+<td>可连接多个设备，分隔冲突域</td>
+</tr>
+<tr>
+<td>传输方式</td>
+<td>广播</td>
+<td>根据 MAC 地址转发</td>
+<td>根据 MAC 地址转发</td>
+</tr>
+<tr>
+<td>智能程度</td>
+<td>无智能，盲目转发</td>
+<td>有简单决策能力（学习 MAC）</td>
+<td>高智能，学习 MAC 并转发</td>
+</tr>
+<tr>
+<td>冲突域</td>
+<td>所有端口同属一个冲突域</td>
+<td>两端口是两个冲突域</td>
+<td>每个端口是一个冲突域</td>
+</tr>
+<tr>
+<td>广播域</td>
+<td>所有端口同属一个广播域</td>
+<td>默认不隔离广播域</td>
+<td>所有端口同属一个广播域（除非划 VLAN）</td>
+</tr>
+<tr>
+<td>速度性能</td>
+<td>慢，冲突多</td>
+<td>中等</td>
+<td>快，支持全双工、高速传输</td>
+</tr>
+<tr>
+<td>是否支持全双工</td>
+<td>否</td>
+<td>否</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>常见应用</td>
+<td>早期 LAN，已淘汰</td>
+<td>小型网络连接</td>
+<td>常见于现代局域网</td>
+</tr>
+</tbody>
+</table>
+<p>对比路由器和交换机</p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>路由器（Router）</th>
+<th>交换机（Switch）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>工作层</strong></td>
+<td>网络层（第三层）</td>
+<td>数据链路层（第二层）</td>
+</tr>
+<tr>
+<td><strong>主要功能</strong></td>
+<td>连接<strong>不同网络</strong>，进行<strong>IP寻址和路由转发</strong></td>
+<td>在<strong>局域网内部</strong>连接设备，通过<strong>MAC地址转发</strong></td>
+</tr>
+<tr>
+<td><strong>是否看 IP 地址</strong></td>
+<td>✅ 是，做三层路由</td>
+<td>❌ 否，只看 MAC 地址</td>
+</tr>
+<tr>
+<td><strong>是否看 MAC 地址</strong></td>
+<td>✅ 是（用于ARP、封装）</td>
+<td>✅ 是</td>
+</tr>
+<tr>
+<td><strong>是否隔离广播域</strong></td>
+<td>✅ 是（每个接口一个广播域）</td>
+<td>❌ 否（所有端口默认同属一个广播域，除非配置 VLAN）</td>
+</tr>
+<tr>
+<td><strong>是否隔离冲突域</strong></td>
+<td>✅ 是</td>
+<td>✅ 是（每个端口一个冲突域）</td>
+</tr>
+<tr>
+<td><strong>典型端口数</strong></td>
+<td>少（通常4个LAN + 1个WAN）</td>
+<td>多（8口、24口、48口常见）</td>
+</tr>
+<tr>
+<td><strong>是否支持NAT</strong></td>
+<td>✅ 是（路由器核心功能之一）</td>
+<td>❌ 否</td>
+</tr>
+<tr>
+<td><strong>是否支持DHCP</strong></td>
+<td>✅ 常支持，自动分配IP地址</td>
+<td>❌ 否</td>
+</tr>
+<tr>
+<td><strong>常见用途</strong></td>
+<td>连接局域网和外网、跨网段通信</td>
+<td>局域网内部连接设备</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_2">物理层</h2>
+<p>物理层负责的功能是实现bit流的传输，涉及到<strong>编码与调制</strong>，<strong>复用</strong>和<strong>纠错</strong>问题。</p>
+<p><strong>码元</strong>：如果一个周期有K种信号，那么1码元=log_2 K bit</p>
+<p>波特率=每秒传输的码元数量 Baud</p>
+<p>比特率=每秒传输几个比特=Baud*n，其中n是一个码元可以携带的bit数量</p>
+<h3 id="_3">编码</h3>
+<h4 id="_4">编码理论</h4>
+<p><strong>无噪声信道的最高传输速率</strong></p>
+<div class="arithmatex">\[
+    C = Wlog_2L \space bps
+\]</div>
+<p>其中L表示码元能够表示的信息数量，可以是2、4、8等等。W是信道的带宽，以Hz为单位。</p>
+<p>对于一个理想低通信号，最高频为W的话，那么上述公式应该是2W。</p>
+<p><strong>有噪声信道的最高传输速率</strong></p>
+<div class="arithmatex">\[
+    C = Wlog_2(1+\frac{S}{N}) \space bps
+\]</div>
+<p>其中<span class="arithmatex">\(\frac{S}{N}\)</span>被称之为信噪比，W为带宽。</p>
+<h4 id="_5">数字编码技术</h4>
+<p>1、单极性编码，用零电平表示0，高电平表示1</p>
+<p><img alt="" src="../images/%E5%8D%95%E6%9E%81%E6%80%A7%E7%BC%96%E7%A0%81.png" /></p>
+<p>这种方法难以区分连续的0和1，需要有很严格的时钟进行同步。同时持续的0和1还会带来直流电平积累问题。</p>
+<p>2、Not Return Zero编码</p>
+<p>用负电平表示 0，正电平表示 1（或相反），一定的中和。</p>
+<p>缺点是：难以分辨一位的结束和开始，要有时钟同步，仍然有直流电平的积累。</p>
+<p><img alt="" src="../images/%E4%B8%8D%E5%BD%92%E9%9B%B6%E7%BC%96%E7%A0%81.png" /></p>
+<p>3、归零编码</p>
+<p>用负电平表示 0，正电平表示 1（或相反），比特中位跳变到零电平，从而提供同步。</p>
+<p>优点是本身具有同步信息，缺点是需要采用3个电平表示1bit，占用了带宽。</p>
+<p><img alt="" src="../images/%E5%BD%92%E9%9B%B6%E7%BC%96%E7%A0%81.png" /></p>
+<p>4、曼彻斯特编码</p>
+<p>每一位中间都有一个跳变，从低跳到高表示 0，从高跳到低表示 1</p>
+<p>自带时钟信号，但是编码效率为50%。</p>
+<p><img alt="" src="../images/%E6%9B%BC%E5%BD%BB%E6%96%AF%E7%89%B9%E7%BC%96%E7%A0%81.png" /></p>
+<p>5、差分曼彻斯特编码</p>
+<p>在时钟信号起始处有跳变是0，没有跳变是1。无论是0还是1中间都要跳变。</p>
+<h3 id="_6">复用</h3>
+<p>由于一条线路的传输能力远超一个用户信号所需要的能力，为了提高线路利用率，经常让多个信号共用一个物理线路。</p>
+<h4 id="tdm">时分复用 TDM</h4>
+<p>将时间划分为等长的时分复用帧，每个用户在TDM帧中占用固定序号的时隙。每个用户占用的时隙是周期出现的，在不同的时间占据相同的频带宽度。</p>
+<p><img alt="" src="../images/TDM.png" /></p>
+<p>时分复用可能会造成线路资源的浪费：使用时分复用系统传送计算机数据时，由于计算机数据的<strong>突发性质</strong>，用户对分配到的子信道的利用率一般不高。</p>
+<h4 id="stdm">统计时分复用 STDM</h4>
+<p>不是固定时间就发送，而是一旦有了就发送。不按照时间来划分用户，所以需要帧自己携带用户信息。</p>
+<p><img alt="" src="../images/STDM.png" /></p>
+<h4 id="fdm">频分复用 FDM</h4>
+<p>用户分配到一定的频带后，就一直占用这个频带。所有的用户在相同的时间内占用不同的频带。</p>
+<h4 id="cdm">码分复用 CDM</h4>
+<p>基站产生相互独立的bit序列来表示，取反得到的序列来表示0。多个用户发送的码可以进行叠加，只需要进行一个点积操作就知道用户发送的是1还是0，还是没有发送数据。这种编码得到的频谱近似于白噪声，不易于信息泄露。</p>
+<p>具体的计算过程，进行规范化内积后得到为+1，说明发送的是bit1，得到-1，说明发送的是bit0，如果得到0，说明没有发送数据。</p>
+<h3 id="_7">物理层的设备</h3>
+<p><strong>中继器</strong>：只负责信号的整形与放大，使得信号可以传播到更远的距离</p>
+<p><strong>集线器Hub</strong>：本质是端口更多的一个中继器，不能隔绝冲突域，不能多个端口同时发送数据</p>
+<h2 id="_8">数据链路层</h2>
+<p>数据链路层利用了物理层比特传输的服务，向网络层提供IP数据报封装成帧，传输给下一个相邻节点的功能。该层实现了相邻结点的可靠传输。</p>
+<p>数据链路层解决<strong>封装成帧，差错控制，流量控制问题，介质访问控制</strong>，即如何在不稳定的链路上为网络层提供一个可靠的、无差错的、面向帧的点到点或点到多点的数据传输服务。</p>
+<p>数据链路层的协议明确了链路上交换的数据格式，链路上的两个节点的行为。</p>
+<h3 id="_9">封装成帧</h3>
+<p>封装成帧是保证帧定界和透明传输。</p>
+<p>1、字符计数法</p>
+<p>在最开始用一个定长的技术字段来说明帧长。但如果有一个出错了，后面就全部错了。通常也不会使用。</p>
+<p>2、字符填充法</p>
+<p>在帧的开头和结尾加入特定的一个bytes序列。同时还要扫描帧内部，如果发现冲突的内容，需要在前面加入ESC转义字符。</p>
+<p>3、0bit填充法</p>
+<p>在开头和结尾加上01111110这个特殊的序列，扫描中间数据部分，如果连续出现5个1就在后面加1个0。</p>
+<p>4、违规编码法</p>
+<p>采用一些特殊编码的时候，可以刻意违背编码方式从而界定帧。</p>
+<h3 id="_10">差错控制与纠错</h3>
+<p>差错控制有两个粒度，一个是只检错，发现错就丢失；另外一种是引入纠错码，有一定的修复能力。</p>
+<p>可靠传输要保证数据有序，数据不重复，帧不丢失。</p>
+<h4 id="_11">奇偶校验码</h4>
+<p>分为奇校验和偶校验，一般无法检测出多个bit出错的情况。</p>
+<p>对于偶校验，只需要对后续的bit进行异或运算即可得到码。接受方对所有bit进行xor运算，如果结果为1说明出错了。</p>
+<p>对于奇校验，整个校验码（包括信息位和校验位）中1的个数为奇数个。</p>
+<h4 id="crc">CRC 循环冗余校验码</h4>
+<p><img alt="CRC" src="../images/CRC.png" /></p>
+<p>可以检测连续的错误，只要不超过校验位长度的连续错误。</p>
+<h4 id="_12">海明码</h4>
+<p>校验码的位数根据信息的长度来定，分组进行校验。具体的检测方法参考PPT</p>
+<p>对于P3，也就是第8位上的校验位，如何确定是从哪些位置上计算得到呢？首先将所有的编号，都拆成2的n次方相加的形式。对于8=2^3，我们寻找所有含有2^3的位置的去计算奇偶校验码即可。</p>
+<p><a href="../pdfs/%E6%B5%B7%E6%98%8E%E7%A0%81.pdf">点击查看海明码的计算过程</a></p>
+<h3 id="_13">流量控制与可靠传输</h3>
+<p>这两个机制都可以通过滑动窗口机制来实现。</p>
+<p>重点关注停止等待协议，回退N帧协议和选择重传机制。</p>
+<p>这几种策略的不同点在于：1、确认机制；2、重传机制；3、滑动窗口大小</p>
+<h4 id="_14">停止等待协议</h4>
+<p>窗口大小均为1，接收方要发送ACKI，发送到超时没有收到确认会重传。</p>
+<h4 id="n-gbn">回退N帧协议 GBN</h4>
+<p>发送窗口大于1，接受窗口等于1。返回ACKI，超时重传。</p>
+<p>接收方可以累积确认，连续收到多个数据帧的时候，只确认最后一个帧；发送方如果超时没收到ACKI，则重传i及其之后的所有帧。</p>
+<p>注意如果使用n bit来标记编号，则WT+WR&lt;=2^n，否则超时重传的时候，会被认为是下一个窗口的正常数据被错误地接收。</p>
+<p>如果网络质量比较差，那么将会有很多重传的帧，拥塞网络。</p>
+<h4 id="sr">选择重传SR协议</h4>
+<p>接收和发送窗口均大于1，但是要保证接收窗口小于等于发送窗口。</p>
+<p>确认是一帧一帧进行的；如果发现有错误，则直接发送NAKI帧。</p>
+<p>超时没接收到ACKI，则会重传第i帧；如果收到NAKI帧，直接重传。</p>
+<h3 id="_15">介质访问控制</h3>
+<p>主要解决在共享信道上谁来发送数据的问题。常见的协议有CSMA/CD(以太网802.3)、CSMA/CA(无线局域网802.11)</p>
+<p><img alt="介质访问控制" src="../images/%E4%BB%8B%E8%B4%A8%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6.png" /></p>
+<h4 id="aloha">纯ALOHA</h4>
+<p>准备好数据帧就发送，如果超时没有ACK就等待一段时间再发送。改进版是时隙ALOHA，只在特定的时隙发送数据，避免了发送数据的随意性，降低冲突率。</p>
+<h4 id="csma">CSMA协议</h4>
+<p>在发送之前先监听一下信道，空闲的时候直接发送数据。但是这会导致多个信道同时发送数据而冲突。</p>
+<p><img alt="CSMA" src="../images/CSMA.png" /></p>
+<h4 id="8023">802.3帧</h4>
+<p><img alt="8023" src="../images/8023.png" /></p>
+<ul>
+<li>前导码：前7bytes为同步码，后1bytes为帧界定符。</li>
+<li>源地址和目的地址：各6bytes的MAC地址</li>
+<li>长度/类型字段：2bytes，大于1500的为上层协议类型</li>
+<li>数据部分：46-1500B，最小为46B，小于的需要填充字段</li>
+<li>填充字段</li>
+<li>FCS帧校验序列：4bytes</li>
+</ul>
+<p>最小帧长为64 Bytes，最大帧长是1518 Bytes，口诀 6 6 2 N 4</p>
+<p>以太网是一个广播网络，帧会被总线上的所有设备监听到，设备需要查看帧是否要传输给自己，不是的话抛弃掉。</p>
+<h4 id="_16">无线网帧</h4>
+<p>有三种帧格式</p>
+<ul>
+<li>控制帧</li>
+<li>管理帧</li>
+<li>数据帧</li>
+</ul>
+<p>其中数据帧和802.3差不多，但是数据载荷会更多，而且还会包括序号和确认信息。</p>
+<p><img alt="80211" src="../images/80211%E5%B8%A7.png" /></p>
+<p>802.11帧的头部会有标志说明帧是去往AP还是来自AP，无线局域网的两个移动设备不能直接通信，需要经过AP进行转发。</p>
+<p>口诀：去往AP，中起止；来自AP，止中起</p>
+<h4 id="csmacd">CSMA/CD协议</h4>
+<p>先听再发，边听边发，冲突停发，随机重发。</p>
+<p>带冲突检测的载波侦听多路访问协议，适用于总线结构的以太网。CSMA/CD协议可以实行的重点在于以太网中的载波是可以被监听的。由于以太网的传输质量比较高，所以该层并没有进行ACK确认，当数据发生差错的时候，是由上层的协议负责重新发起传输。这和CSMA/CA不同，因为无线传输无法监听载波，而且无线传输的传输差错概率高，所以在802.11的帧格式中存在一个序号，是为了进行重传的。</p>
+<p>重点关注CSMA/CD协议中的重传时机，根据k失败次数，指数地随机确定一个重传时间。但超过16次失败就直接躺平，报告给上级。</p>
+<p>由于边发边监听，一些太短的帧可能会导致冲突了而不知道，所以规定了最短帧长64B。</p>
+<p><img alt="CSMACD" src="../images/CSMACD.png" /></p>
+<h4 id="csmaca">CSMA/CA协议</h4>
+<p>协议要点：发送方先监听后发送，如果信道忙则随机退避，如果信道空闲则间隔DIFS后一口气发送帧，不进行监听。随机退避的时间使用二进制指数算法随机确认，发送方会持续监听信道，只有闲的时候才持续扣除倒计时，倒计时结束后立即发送帧。接收方使用停止等待协议，得到一个正确的帧就会发送ACK，如果发送方超时没有收到ACK则进行随机避让。</p>
+<p>在无线局域网中，常常会出现两类问题</p>
+<ul>
+<li>隐藏站问题：当 A 将数据传输到 B 时，C 无法检测到 A 和 B 之间的传输，因此 C 可能会决定将数据传输到 B 并导致 B 发生冲突。为了解决隐蔽站问题，发送方可以广播RTS控制帧预约时间，AP会广播CTS控制帧，其余站点接收到这个帧则会自动禁言一段时间。</li>
+<li>暴露站问题：当 B 将数据传输到 A 时，C 可以检测到传输，因此 C 不会将数据传输到 D。但这是一个错误。（听到不应该听到的信号）</li>
+</ul>
+<p><img alt="两类问题" src="../images/%E4%B8%A4%E7%B1%BB%E9%97%AE%E9%A2%98.png" /></p>
+<p>为什么我们不使用CSMA/CD协议：</p>
+<ol>
+<li>碰撞检测要求本站点在发送数据的同时不断监听信道，但是对于无线信号来说，信号十分微弱，很难监控</li>
+<li>即使监控了，也很难避免碰撞的发生。</li>
+</ol>
+<h3 id="_17">局域网</h3>
+<p>覆盖比较小的地理范围，较低的时延和误码率，支持单播、广播和多播技术。</p>
+<p>有线局域网：主要是802.3以太网，之前还有IBM的令牌环网。以太网也分为双绞线以太网和光线以太网。双绞线以太网现在主要是由交换机进行连接，如果是全双工的交换机则不用争抢信道。</p>
+<p>无线局域网WLAN：主要是802.11/WiFi，通常是一个AP＋多个终端，需要使用CSMA/CA协议避免冲突。</p>
+<p><strong>以太网和WiFi的相同点与不同点</strong></p>
+<p>相同点：都属于数据链路层，都可以用来构建局域网，都采用帧作为传输单元，每个设备都有一个MAC地址，都有介质访问控制协议</p>
+<p>不同点：传输介质不同；速率不同；稳定性不同。</p>
+<h2 id="_18">网络层</h2>
+<p>网络层将传输层的数据封装成IP数据报，网络中的路由器根据IP数据报的首部中的源IP地址和目的IP地址进行“分组转发”。网络层实现了从主机到主机的传输。网络层的关键词是路由和转发。</p>
+<p>网络层还负责实现拥塞控制和流量控制。拥塞控制有两种方法：开环方法，即事先设计好预防拥塞的方法；闭环方法，动态监视网络的状态。</p>
+<p>网络层的核心协议是IP协议（尽最大努力交付，无连接服务），除此之外还有</p>
+<ul>
+<li>ARP协议：查询网络中主机的&lt;ip地址，MAC地址&gt;映射对</li>
+<li>ICMP协议：网络层实体之间相互通知“异常事件”，例如差错报告（目的不可达，时间TTL超时），诊断和测试（时间戳请求与应答，用于ping命令）</li>
+<li>IGMP协议：用于实现IP组播</li>
+</ul>
+<p><strong>数据报网络和虚电路网络的区别</strong></p>
+<p>数据报网络不需要事先建立电路连接，每个数据报都有全部的地址信息，不需要记录链路状态，单独一个路由器失效带来的影响比较小，通信质量不如虚电路高，拥塞控制难实现。</p>
+<p>虚电路网络需要实现确立虚电路连接，每个数据报只有简短的虚电路号，单独一个路由器失效则中断，通信质量高，拥塞控制容易实现。</p>
+<h3 id="ipv4">IPV4</h3>
+<p><strong>IPV4数据报</strong></p>
+<p><img alt="" src="../images/IPV4.png" /></p>
+<ul>
+<li>首部长度，4bit，以4B为单位。基本首部长度20B，可以拓展到60B</li>
+<li>总长度0-65535，总长度涵盖首部和数据部分</li>
+<li>标识，16bit，是一个自增序号</li>
+<li>标志，3bit，表示是否还有下一个片段。因为要受数据链路层MTU长度的限制，有的路由器可能会将长的IP数据包进行分片，每一个分片都有首部。</li>
+<li>片偏移，13bit，表示数据部分在被分片前的位置，以x8B为单位。所以除了最后一个分片，其余分片的长度都必须是8B的整数倍</li>
+<li>生存时间段，8bit，每经过一个路由器就会被减1，如果减到0还没有被送达就会发出一个ICMP报文提示无法送达</li>
+<li>协议，8bit，用于区分TCP和UDP</li>
+<li>首部校验和，checksum，16bit，只校验首部</li>
+</ul>
+<p><strong>IPV4地址的分类</strong></p>
+<p><img alt="" src="../images/IPV4%E5%9C%B0%E5%9D%80.png" /></p>
+<p>特殊的地址</p>
+<p><img alt="" src="../images/%E7%89%B9%E6%AE%8A%E5%9C%B0%E5%9D%80.png" /></p>
+<p>主机号全1表示广播地址，主机号全0是保留地址</p>
+<h3 id="_19">子网划分技术</h3>
+<p>当主机号数量大于我们所需要的数量的时候就会造成浪费和管理不方便，为此我们可以再主机号里面抽取一些bit当做网络号，即划分子网。</p>
+<p>子网划分出来后有利于提高网络的安全性和隔离性，减少广播域和提高网络性能。</p>
+<p>子网掩码指定了网络号和主机号，网络号位被置1，主机号置0。如果一个网络进行了子网划分，那么网络中的每个主机，路由器的每个端口都需要设置子网掩码。</p>
+<p>默认网关：当一个网络中的主机想访问另外一个网络的时候，需要将数据包发送到默认网关，默认网关负责将数据进行转发。当然这需要提前使用ARP协议将默认网关的MAC地址获取出来。</p>
+<p>默认路由的网络号和子网掩码全为0，可以和任何IP地址匹配上。</p>
+<h3 id="cidr">CIDR</h3>
+<p>优势：网络前缀可变长，分配地址的时候更加灵活，可以降低IP地址的浪费；支持路由聚合，降低路由表项的数量</p>
+<p>传统定长子网划分技术每个子网的主机数量是一致的，容易造成浪费。</p>
+<p>一个最小的子网，<strong>最少需要2bit作为主机号</strong>，分别是主机，路由器端口，全0和全1这两个特殊的地址。</p>
+<p><strong>路由聚合</strong>：对于路由表中几个转发接口相同，部分前缀也相同的路由表项可以进行合并，可以减小表项，提高查表的速度。在转发查表的时候，应该遵循最长前缀匹配原则。</p>
+<h3 id="nat">NAT</h3>
+<p>Network Address Translation，网络地址转换技术。可以让私有IP地址访问外部网络设备，而不必为每个设备都分配一个公网IP地址，比如192.168.x.x，10.x.x.x。这样的好处有：1、地址复用；2、节约公网地址资源；3、屏蔽内部结构，增强安全性，公网无法直接访问私有网络中的主机。</p>
+<p>NAT实际是运行在传输层的，因为它需要在NAT表中建立ip号+端口号的映射。这是由于公网IP地址只有一个，我们需要用端口号来区分不同的服务进程。</p>
+<h3 id="arp">ARP</h3>
+<p>ARP协议是独立于IP协议的，用于确定&lt;mac地址，ip地址&gt;的映射关系。每一个网络适配器都会有自己独立的mac地址。</p>
+<ul>
+<li>ARP请求分组：内容包括我是谁（我的MAC地址和IP地址），我要找谁（IP地址）。然后封装成MAC帧，MAC地址全，源地址是Y（本人MAC地址）</li>
+<li>ARP响应分组：回复一个单播帧，我的IP地址是xxx，我的MAC地址是xxx</li>
+</ul>
+<p>比如当我们想要找默认网关的MAC地址的时候，源主机会广播一个ARP请求分组，只有路由器会回复一个单播帧。此时源主机就知道了路由器的MAC地址，并将其记录到ARP表中，下一次发送IP数据报的时候就知道封帧使用什么MAC地址了。</p>
+<h3 id="dhcp">DHCP协议</h3>
+<p>通过给刚接入网络的主机分配IP地址、默认网关和子网掩码。使用C/S模型。
+DHCP是应用层协议，基于UDP实现，客户端口为68，服务器端口为67</p>
+<p>1、Discover报文：C-&gt;S。我的MAC地址是XXX，请给我们分配一个IP地址。IP地址会被填充为0.0.0.0，目的IP地址是255.255.255.255。帧也是广播帧。</p>
+<p><img alt="" src="../images/DHCP1.png" /></p>
+<p>2、Offer报文：S-&gt;C。将要分配的IP地址，租用时间，默认网关和子网掩码报告出去。该帧是一个单播帧。</p>
+<p><img alt="" src="../images/DHCP2.png" /></p>
+<p>3、Request报文：此时源IP地址还是全0，目的地址是全1，目标MAC地址还是全1。这是因为一个子网里面可能有多个DHCP服务器，多个服务器都会给源主机发送Offer报文。所以我们需要一个Request报文广而告之所有的DHCP服务器，我到底接受了哪个IP地址。</p>
+<p><img alt="" src="../images/DHCP3.png" /></p>
+<p>4、Acknowledge报文。</p>
+<p><img alt="" src="../images/DHCP4.png" /></p>
+<h3 id="ipv6">IPV6</h3>
+<p>IPV6地址为128位，数量足够多。首部变成固定40字节，使用拓展头机制。</p>
+<table>
+<thead>
+<tr>
+<th>对比维度</th>
+<th>IPv4</th>
+<th>IPv6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>地址长度</td>
+<td>32 位</td>
+<td>128 位</td>
+</tr>
+<tr>
+<td>地址数量</td>
+<td>≈ 42 亿</td>
+<td>极其庞大</td>
+</tr>
+<tr>
+<td>表示方式</td>
+<td>点分十进制</td>
+<td>冒号十六进制</td>
+</tr>
+<tr>
+<td>NAT 是否需要</td>
+<td>是</td>
+<td>否</td>
+</tr>
+<tr>
+<td>安全机制</td>
+<td>选配 IPsec</td>
+<td>默认支持 IPsec</td>
+</tr>
+<tr>
+<td>广播支持</td>
+<td>支持</td>
+<td>不支持广播，只支持组播 / 任播</td>
+</tr>
+<tr>
+<td>自动配置</td>
+<td>限于 DHCP</td>
+<td>支持自动配置，无需 DHCP</td>
+</tr>
+<tr>
+<td>网络效率</td>
+<td>较低，需复杂处理</td>
+<td>更高效，结构清晰</td>
+</tr>
+<tr>
+<td>发展现状</td>
+<td>全球广泛部署，地址已枯竭</td>
+<td>正逐步部署，未来趋势</td>
+</tr>
+<tr>
+<td>分片机制</td>
+<td>可在主机和路由器分片</td>
+<td>只允许在主机分片</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_20">转发过程</h3>
+<h3 id="_21">拥塞控制</h3>
+<p>拥塞一般就发生在网络层。当注入网络的流量超过网络所能够处理的时候，就会发生拥塞。相反地，流量控制关注的是接收方是否能够处理发送方所发送过来的数据。</p>
+<p>负载脱落：当接收方无法及时处理发送方发送过来的数据时，可以选择抛弃旧的或者新的数据。</p>
+<p>流量整形：主要有漏桶算法和令牌桶算法。</p>
+<p><strong>漏桶算法</strong>：超过缓冲区的数据可能会被丢弃，输出的流量经过控制，是恒定的。</p>
+<p><strong>令牌桶算法</strong>：每次消耗令牌桶中的令牌以发送数据，允许短时间的大流量。</p>
+<h2 id="_22">路由算法</h2>
+<table>
+<thead>
+<tr>
+<th>比较维度</th>
+<th>静态路由（Static Routing）</th>
+<th>动态路由（Dynamic Routing）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>配置方式</td>
+<td><strong>手动配置</strong>，管理员设定每条路由</td>
+<td><strong>自动学习</strong>，通过协议自行学习并更新路由表</td>
+</tr>
+<tr>
+<td>适应网络变化</td>
+<td>不自动更新，需要人工干预</td>
+<td>自动感知链路变化，快速更新</td>
+</tr>
+<tr>
+<td>占用资源</td>
+<td>少，计算量和内存开销低</td>
+<td>多，需要额外 CPU 和内存开销</td>
+</tr>
+<tr>
+<td>配置复杂度</td>
+<td>简单（网络小）/ 麻烦（网络大）</td>
+<td>自动（适合大型或复杂网络）</td>
+</tr>
+<tr>
+<td>故障恢复速度</td>
+<td>慢（需手动更改）</td>
+<td>快（自动选择替代路径）</td>
+</tr>
+<tr>
+<td>安全性</td>
+<td>高（不受外部路由影响）</td>
+<td>稍低（可能受到路由欺骗等安全问题）</td>
+</tr>
+<tr>
+<td>适用场景</td>
+<td>小型网络，结构稳定</td>
+<td>大中型网络，拓扑频繁变化</td>
+</tr>
+</tbody>
+</table>
+<p>路由算法分类</p>
+<table>
+<thead>
+<tr>
+<th>分类方式</th>
+<th>类型</th>
+<th>示例协议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>按自治系统划分</strong></td>
+<td><strong>IGP</strong>（内部网关协议）</td>
+<td>RIP、OSPF、IS-IS、EIGRP</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>EGP</strong>（外部网关协议）</td>
+<td>BGP</td>
+</tr>
+<tr>
+<td><strong>按算法划分</strong></td>
+<td>距离矢量（DV）</td>
+<td>RIP、BGP</td>
+</tr>
+<tr>
+<td></td>
+<td>链路状态（LS）</td>
+<td>OSPF、IS-IS</td>
+</tr>
+<tr>
+<td></td>
+<td>混合型</td>
+<td>EIGRP</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_23">距离向量算法</h3>
+<p>和<strong>相邻邻居</strong>交换路由信息，更新自己的路由表。代表算法是RIP，它使用UDP协议封装。距离路径算法以跳数作为衡量的指标metric。</p>
+<p>优势是算法速度快，时间复杂度和空间复杂度都比较低。</p>
+<p>劣势是好消息传得快，坏消息传的慢。比如当有一个路由器断开之后，代价会慢慢累加到无穷。一个可行的改进方法是引入最大跳数限制，比如RIP中限制为16。</p>
+<h3 id="_24">链路状态算法</h3>
+<p>使用洪泛的方法将自己的路由表广播到整个网络，每个路由器都可以获得全局的路由信息，根据这个路由信息可以构建网络拓扑，进而使用迪杰斯特拉算法来构建到每个结点的最短路径。代表算法OSPF，它使用IP协议封装。</p>
+<p>包的交换需要使用洪泛技术。为了抑制洪泛带来的带宽限制，可以设置seq字段，只有新的数据包会被接受。除此之外还有age字段，到期自动过期。</p>
+<p>优点是收敛速度快，只计算一次路径，稳定性高。
+缺点是时间复杂度比较高，资源开销大。洪泛会带来大量的资源浪费和带宽占用。</p>
+<h3 id="-">路径-向量路由算法</h3>
+<p>这是一种在自治系统之间使用的路由算法。不仅记录了下一跳，还记录了完整的路径信息。代表算法BGP。</p>
+<p>由于不同AS之间使用的度量代价是不同的，所以域间的路由使用“代价”作为度量是不合理的，所以寻找最佳路由是没有意义的。自治系统之间的路由选择还应该考虑经济、政策等方面。所以BGP只是要寻找一个可以到达的路由，而不是最佳路由。</p>
+<p>优点是可以进行灵活的政策控制，有效避免了换路的发生。</p>
+<p>具体过程：每一个AS需要选择BGP发言人，相邻的BGP发言人使用TCP协议发起BGP会话交换路由信息。</p>
+<h2 id="_25">传输层</h2>
+<p>为什么需要传输层？提高网络服务质量，在不可靠的网络上面提供可靠的服务；提供一个统一的原语接口，屏蔽不同网络层的实现细节，使得程序员可以使用一套标准的原语接口进行编程。</p>
+<p>实现端到端的通信服务，向应用层提供面向连接的可靠传输服务和无连接传输服务，并提供差错检测、流量控制和拥塞控制。</p>
+<p>传输层使用端口号来唯一地标识主机的一个进程，TCP和UDP的端口号是独立的</p>
+<p>TCP或者UDP协议使用Socket套接字，唯一地标识网络中的一台主机上的一个应用进程</p>
+<h3 id="udp">UDP协议</h3>
+<p>UDP协议适合于对可靠性不那么高要求的传输服务，但对实时性要求比较高的。</p>
+<p>UDP报文首部8B，每次传输一个完成的报文，不支持报文的自动拆分、重装。UDP不支持拥塞控制，流量控制。</p>
+<p><img alt="UDP" src="../images/UDP.png" /></p>
+<p><strong>UDP校验和的计算方法</strong></p>
+<p>在开头添加12B的伪首部，每16bit为一个单位进行二进制加法，最高位有进位则回卷，然后结果取反。</p>
+<p><img alt="UDP校验和" src="../images/UDP%E6%A0%A1%E9%AA%8C.png" /></p>
+<h3 id="_26">传输层的差错控制和流量控制</h3>
+<p>差错控制：对于数据链路层来说，检查的是一条链路上是否存在传输错误，而对于传输层来说，检查的是端到端是否有错误。</p>
+<p>拥塞控制：拥塞发生在网络层，但是拥塞毕竟是因为传输层注入网络的流量过多导致的，所以本质还是要通过传输层进行调控。</p>
+<h3 id="tcp">TCP协议</h3>
+<p>TCP协议是面向连接的，传输字节流的，可靠的传输层服务，传输的数据叫做TCP报文段，也叫TCP段。</p>
+<p><img alt="TCP段" src="../images/TCP%E6%AE%B5.png" /></p>
+<ul>
+<li>首部固定长度为20B</li>
+<li>源端口和目的端口号各16bit</li>
+<li>序号：给TCP传输中的每个字节都编上了一个序号</li>
+<li>确认号：期望收到对方下一个报文段的第一个字节的序号，使用累积确认，体现了全双工通信的优点</li>
+<li>数据偏移（TCP头长度）：记录TCP报文段数据部分开始的位置，以4B为单位，即首部最长是60B</li>
+<li>窗口大小：可以变化，体现了流量控制。当希望发送方不要再发送消息的时候，可以发送一个窗口大小为0的段。</li>
+</ul>
+<h4 id="tcp_1">TCP建立连接</h4>
+<p><img alt="三次握手" src="../images/%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B.png" /></p>
+<ul>
+<li>第一次握手：客户端使用CONNECT原语，生成SYN=1，ACK=0的TCP报文段，代表连接请求</li>
+<li>第二次握手：服务器如果接受连接，发送SYN=1,ACK=1的段</li>
+<li>第三次握手：客户端回复ACK=1,SYN=0表示真的连接成功，此次握手可以携带数据</li>
+</ul>
+<p>三次握手之后可以保证双方都知道对方接收到了自己的消息。</p>
+<p>如果只进行两次握手，可能会导致回复的是之前的一个旧连接请求，导致假握手</p>
+<h4 id="tcp_2">TCP释放连接</h4>
+<p><img alt="四次挥手" src="../images/%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B.png" /></p>
+<ul>
+<li>一方先提起断开连接，则发送一个FIN=1的报文，自己进入了FIN-WAIT1状态</li>
+<li>对方接收到要断开连接的报文后，自己还可以单方向的传输数据</li>
+<li>对方也传输完之后会发送一个FIN=1报文，自己进入LAST-CHECK状态</li>
+<li>一方接收到之后，回复确认报文，至此双方连接断开</li>
+</ul>
+<p>使用四次握手是因为TCP连接是全双工通信，每一方都必须单独断开连接。
+FIN=1只代表我不发了，但不代表我不收了。</p>
+<p>为什么需要最后一个TIME_WAIT阶段？因为如果这个ACK报文没有正确送达，对方会重新发送FIN=1报文，我需要重新传输。</p>
+<h4 id="_27">流量控制与可靠传输</h4>
+<p>可靠传输：通过SEQ和ACK号保证数据不丢不漏不重</p>
+<p>流量控制：双方维护一个滑动窗口。通过rwnd字段，实时更新窗口大小，抑制对面发送的速度</p>
+<p>超时重传：对于发送出去的报文段，超时没有得到ACK就会自动重传</p>
+<p>快重传和立即确认机制：也称为冗余ACK。让可能出错的报文尽可能早的重传。为了避免中间报文的丢失而导致的已经正确接受的报文被重复发送，可以引入立即确认和快重传机制。每次接收到一个报文之后就立即回复，即使是失序的报文，但是只回复还没收到的那个序号。这样发送方就知道中间有报文丢失，但是后续的报文被正确接收了，不然不会接收到多个ACK报文。</p>
+<p><img alt="快重传" src="../images/%E5%BF%AB%E9%87%8D%E4%BC%A0.png" /></p>
+<h4 id="_28">拥塞控制</h4>
+<p><strong>拥塞控制与流量控制的区别</strong></p>
+<p>拥塞控制是控制整个网络每台主机的数据发送量，降低路由器负载，是全局的</p>
+<p>流量控制是控制端到端之间的数据发送量，是局部的</p>
+<p>拥塞控制的核心算法是慢开始，拥塞避免，我个人觉得这是一种启发式的，经验算法。</p>
+<p><strong>慢开始</strong>：一开始窗口大小随着指数规律增长，直达到阈值
+<strong>拥塞避免</strong>：达到阈值之后线性增长直到发生了拥塞
+<strong>乘法减小</strong>：阈值变为发生拥塞时候的一半，重新开始慢开始</p>
+<p>现在更新的版本是快恢复，即乘法减小到新的阈值之后直接开始加法增长。</p>
+<h2 id="_29">应用层</h2>
+<p>协议有三要素：语法语义和同步</p>
+<p>语法：报文中各个字段及其详细描述</p>
+<p>语义：包含在报文中各个信息的含义</p>
+<p>同步：何时发送报文，以及如何响应</p>
+<p>两种常见的应用层模型：客户端/服务器模型，P2P模型</p>
+<h3 id="dns">域名系统DNS</h3>
+<p>DNS服务器；将域名解析为IP地址</p>
+<p>分类递归查询和迭代查询</p>
+<p>递归查询：不断向上一级查询，然后不断返回查询结果</p>
+<p>迭代查询：每次返回下一次你应该向哪个服务器查询</p>
+<h3 id="wwwhttp">WWW与HTTP协议</h3>
+<p>HTTP协议工作模式：</p>
+<ul>
+<li>非持续连接：每次请求都要建立一个新的连接</li>
+<li>持续连接：一次连接可以发送多次请求和响应<ul>
+<li>非流水线：只有上次一的请求收到响应后才发出下一次HTTP请求</li>
+<li>流水线：连续发出多次请求</li>
+</ul>
+</li>
+</ul>
+<p>HTTP/1.0默认是非持续连接，HTTP/1.1默认是持续连接</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "navigation.footers", "search.suggest", "search.highlight", "navigation.instant", "navigation.expand"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
